@@ -37,114 +37,109 @@ $('#btn-distribuir').click(function () {
         var qtdMaca = $('#' + i + ' .qtdMaca').text()
         switch (melhorAlunoDia) {
             case 'João':
-                if (qtdMaca >= 3){
+                if (qtdMaca >= 3) {
                     $('#' + i + ' .fruta1').html('Maçã')
                     $('#' + i + ' .fruta2').html('Maçã')
                     $('#' + i + ' .fruta3').html('Maçã')
-                } 
+                }
                 else if (qtdMaca == 2) {
                     $('#' + i + ' .fruta1').html('Maçã')
                     $('#' + i + ' .fruta2').html('Maçã')
-                    if (qtdPera >= 3){
+                    if (qtdPera >= 3) {
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 2){
+                    else if (qtdPera == 2) {
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 1){
+                    else if (qtdPera == 1) {
                         $('#' + i + ' .fruta3').html('Pera')
                     }
                     else {
-
                     }
                 }
-                else if (qtdMaca == 1){
+                else if (qtdMaca == 1) {
                     $('#' + i + ' .fruta1').html('Maçã')
-                    if (qtdPera >= 3){
+                    if (qtdPera >= 3) {
                         $('#' + i + ' .fruta2').html('Pera')
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 2){
+                    else if (qtdPera == 2) {
                         $('#' + i + ' .fruta2').html('Pera')
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 1){
+                    else if (qtdPera == 1) {
                         $('#' + i + ' .fruta3').html('Pera')
                     }
                     else {
-
                     }
                 }
                 else {
-                    if (qtdPera >= 3){
+                    if (qtdPera >= 3) {
                         $('#' + i + ' .fruta1').html('Pera')
                         $('#' + i + ' .fruta2').html('Pera')
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 2){
+                    else if (qtdPera == 2) {
                         $('#' + i + ' .fruta2').html('Pera')
                         $('#' + i + ' .fruta3').html('Pera')
                     }
-                    else if (qtdPera == 1){
+                    else if (qtdPera == 1) {
                         $('#' + i + ' .fruta3').html('Pera')
                     }
                     else {
-
                     }
                 }
                 break;
             case 'Maria':
-                if (qtdPera >= 3){
+                if (qtdPera >= 3) {
                     $('#' + i + ' .fruta1').html('Pera')
                     $('#' + i + ' .fruta2').html('Pera')
                     $('#' + i + ' .fruta3').html('Pera')
-                } 
+                }
                 else if (qtdPera == 2) {
                     $('#' + i + ' .fruta1').html('Pera')
                     $('#' + i + ' .fruta2').html('Pera')
-                    if (qtdMaca >= 3){
+                    if (qtdMaca >= 3) {
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 2){
+                    else if (qtdMaca == 2) {
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 1){
+                    else if (qtdMaca == 1) {
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
                     else {
-
                     }
                 }
-                else if (qtdPera == 1){
+                else if (qtdPera == 1) {
                     $('#' + i + ' .fruta1').html('Pera')
-                    if (qtdMaca >= 3){
+                    if (qtdMaca >= 3) {
                         $('#' + i + ' .fruta2').html('Maçã')
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 2){
+                    else if (qtdMaca == 2) {
                         $('#' + i + ' .fruta2').html('Maçã')
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 1){
+                    else if (qtdMaca == 1) {
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
                     else {
                     }
                 }
                 else {
-                    if (qtdMaca >= 3){
+                    if (qtdMaca >= 3) {
                         $('#' + i + ' .fruta1').html('Maçã')
                         $('#' + i + ' .fruta2').html('Maçã')
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 2){
+                    else if (qtdMaca == 2) {
                         $('#' + i + ' .fruta2').html('Maçã')
                         $('#' + i + ' .fruta3').html('Maçã')
                     }
-                    else if (qtdMaca == 1){
+                    else if (qtdMaca == 1) {
                         $('#' + i + ' .fruta3').html('Maçã')
                     } else {
-
                     }
                 }
                 break;
@@ -154,6 +149,51 @@ $('#btn-distribuir').click(function () {
     }
 })
 
-$('#btn-reset').click(function(){
+var totalMaca = 0;
+var totalPera = 0;
+var vazio = 0;
+$('#btn-calc').click(function () {
+    for (var i = 1; i < 31; i++) {
+        //resultado total
+        var frutaUm = $('#' + i + ' .fruta1').text()
+        var frutaDois = $('#' + i + ' .fruta2').text()
+        var frutaTres = $('#' + i + ' .fruta3').text()
+        switch (frutaUm) {
+            case 'Maçã':
+                totalMaca++;
+                break;
+            case 'Pera':
+                totalPera++;
+                break;
+            default:
+                vazio++;
+        }
+        switch (frutaDois) {
+            case 'Maçã':
+                totalMaca++;
+                break;
+            case 'Pera':
+                totalPera++;
+                break;
+            default:
+                vazio++;
+        }
+        switch (frutaTres) {
+            case 'Maçã':
+                totalMaca++;
+                break;
+            case 'Pera':
+                totalPera++;
+                break;
+            default:
+                vazio++;
+        }
+    }
+    $('.result').fadeIn(500);
+    $('#totalMaca').html(totalMaca)
+    $('#totalPera').html(totalPera)
+})
+
+$('#btn-reset').click(function () {
     location.reload();
 })
