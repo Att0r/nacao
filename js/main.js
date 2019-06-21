@@ -147,12 +147,14 @@ $('#btn-distribuir').click(function () {
                 console.log('Ocorreu um erro na verificação de aluno')
         }
     }
+    $(this).attr("disabled", true)
 })
 
-var totalMaca = 0;
-var totalPera = 0;
-var vazio = 0;
 $('#btn-calc').click(function () {
+    var totalMaca = 0;
+    var totalPera = 0;
+    var vazio = 0;
+    
     for (var i = 1; i < 31; i++) {
         //resultado total
         var frutaUm = $('#' + i + ' .fruta1').text()
@@ -192,6 +194,8 @@ $('#btn-calc').click(function () {
     $('.result').fadeIn(500);
     $('#totalMaca').html(totalMaca)
     $('#totalPera').html(totalPera)
+
+    $(this).attr("disabled", true)
 })
 
 $('#btn-reset').click(function () {
