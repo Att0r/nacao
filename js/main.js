@@ -154,7 +154,7 @@ $('#btn-calc').click(function () {
     var totalMaca = 0;
     var totalPera = 0;
     var vazio = 0;
-    
+
     for (var i = 1; i < 31; i++) {
         //resultado total
         var frutaUm = $('#' + i + ' .fruta1').text()
@@ -195,7 +195,6 @@ $('#btn-calc').click(function () {
     $('#totalMaca').html(totalMaca)
     $('#totalPera').html(totalPera)
 
-    $(this).attr("disabled", true)
 })
 
 $('#btn-reset').click(function () {
